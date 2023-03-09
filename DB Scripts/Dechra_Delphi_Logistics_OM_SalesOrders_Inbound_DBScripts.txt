@@ -1,0 +1,152 @@
+CREATE TABLE "DPM_OIC_USER"."XXDPM_INVENTORY_ITEM_DETAILS_T"
+             (
+                          "INVENTORY_ITEM_ID" NUMBER,
+                          "ITEM_NUMBER"       VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "PRIMARY_UOM_CODE"  VARCHAR2(30 byte) collate "USING_NLS_COMP",
+                          CONSTRAINT "XXDPM_INV_ITEM_PK" PRIMARY KEY ("INVENTORY_ITEM_ID") USING INDEX PCTFREE 10 INITRANS 20 MAXTRANS 255 compute STATISTICS STORAGE( INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 buffer_pool DEFAULT flash_cache DEFAULT cell_flash_cache DEFAULT ) TABLESPACE "DATA" ENABLE
+             )
+             DEFAULT collation "USING_NLS_COMP" SEGMENT creation IMMEDIATE PCTFREE 10 PCTUSED 40 INITRANS 10 MAXTRANS 255 NOCOMPRESS logging STORAGE
+             (
+                          INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 buffer_pool DEFAULT flash_cache DEFAULT cell_flash_cache DEFAULT
+             )
+             TABLESPACE "DATA";
+/
+
+CREATE TABLE "DPM_OIC_USER"."XXDPM_SO_UPD_CANCEL_DVP_T"
+             (
+                          "ID"           NUMBER,
+                          "PAYLOAD"      VARCHAR2(32767 byte) collate "USING_NLS_COMP",
+                          "STATUS"       VARCHAR2(30 byte) collate "USING_NLS_COMP",
+                          "ERRORMESSAGE" VARCHAR2(32767 byte) collate "USING_NLS_COMP"
+             )
+             DEFAULT collation "USING_NLS_COMP" SEGMENT creation IMMEDIATE PCTFREE 10 PCTUSED 40 INITRANS 10 MAXTRANS 255 NOCOMPRESS logging STORAGE
+             (
+                          INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 buffer_pool DEFAULT flash_cache DEFAULT cell_flash_cache DEFAULT
+             )
+             TABLESPACE "DATA" ;
+/
+
+CREATE TABLE "DPM_OIC_USER"."XXDPM_SALES_ORDERS_DVP_T"
+             (
+                          "CURRENCY"                    VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "CUSTOMERNAME"                VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "PONUMBER"                    VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "POCREATIONDATE"              DATE,
+                          "OPERATINGUNIT"               VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "LINENUMBER"                  NUMBER,
+                          "ITEM"                        VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "QUANTITY"                    NUMBER,
+                          "UOM"                         VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "PRICE"                       NUMBER,
+                          "NEEDBYDATE"                  DATE,
+                          "REQUESTTYPE"                 VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "ORGANIZATIONCODE"            VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "SHIPPINGINSTRUCTION"         VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "PACKINGINSTRUCTION"          VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "PAYMENTTERMS"                VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "SOURCE_TRANSACTION_ID"       NUMBER,
+                          "SOURCETRANSACTIONSCHEDULEID" NUMBER,
+                          "SOURCESCHEDULENUMBER"        NUMBER,
+                          "STATUS"                      VARCHAR2(30 byte) collate "USING_NLS_COMP",
+                          "SALES_ORDER_NUMBER"          VARCHAR2(30 byte) collate "USING_NLS_COMP",
+                          "SALES_ORDER_LINE_NUMBER"     VARCHAR2(30 byte) collate "USING_NLS_COMP",
+                          "SOURCE_TRANSACTION_LINE_ID"  NUMBER,
+                          "ERRORMESSAGE"                VARCHAR2(4000 byte) collate "USING_NLS_COMP",
+                          "REQUESTSHIPDATE"             VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "POHEADERID"                  NUMBER,
+                          "POLINEID"                    NUMBER,
+                          "SOURCESYSTEM"                VARCHAR2(30 byte) collate "USING_NLS_COMP",
+                          "TOEDIREFCODE"                VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "FROMEDIREFCODE"              VARCHAR2(100 byte) collate "USING_NLS_COMP"
+             )
+             DEFAULT collation "USING_NLS_COMP" SEGMENT creation IMMEDIATE PCTFREE 10 PCTUSED 40 INITRANS 10 MAXTRANS 255 NOCOMPRESS logging STORAGE
+             (
+                          INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 buffer_pool DEFAULT flash_cache DEFAULT cell_flash_cache DEFAULT
+             )
+             TABLESPACE "DATA" ;
+/
+
+CREATE TABLE "DPM_OIC_USER"."XXDPM_SALES_ORDERS_UPD_DVP_T"
+             (
+                          "EVENTCODE"                   VARCHAR2(300 byte) collate "USING_NLS_COMP",
+                          "ORDERNUMBER"                 VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "CURRENCY"                    VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "CUSTOMERNAME"                VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "PONUMBER"                    VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "OPERATINGUNIT"               VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "LINENUMBER"                  NUMBER,
+                          "ITEM"                        VARCHAR2(240 byte) collate "USING_NLS_COMP",
+                          "QUANTITY"                    NUMBER,
+                          "UOM"                         VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "PRICE"                       NUMBER,
+                          "REQUESTDATE"                 DATE,
+                          "SCHEDULESHIPDATE"            DATE,
+                          "REQUESTTYPE"                 VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "ORGANIZATIONCODE"            VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "SOURCE_TRANSACTION_ID"       NUMBER,
+                          "SOURCETRANSACTIONSCHEDULEID" NUMBER,
+                          "SOURCESCHEDULENUMBER"        NUMBER,
+                          "HEADER_ID"                   NUMBER,
+                          "LINE_ID"                     NUMBER,
+                          "RESTAPI_STATUS"              VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "RECORD_STATUS"               VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "UPDATED_QUANTITY"            NUMBER,
+                          "POLINEID"                    NUMBER,
+                          "POHEADERID"                  NUMBER,
+                          "POLINENUMBER"                NUMBER,
+                          "SOURCE_SYSTEM"               VARCHAR2(240 byte) collate "USING_NLS_COMP",
+                          "EDIREFCUST"                  VARCHAR2(100 byte) collate "USING_NLS_COMP",
+                          "EDIREFORG"                   VARCHAR2(100 byte) collate "USING_NLS_COMP"
+             )
+             DEFAULT collation "USING_NLS_COMP" SEGMENT creation IMMEDIATE PCTFREE 10 PCTUSED 40 INITRANS 10 MAXTRANS 255 NOCOMPRESS logging STORAGE
+             (
+                          INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645 PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 buffer_pool DEFAULT flash_cache DEFAULT cell_flash_cache DEFAULT
+             )
+             TABLESPACE "DATA" ;
+/
+
+CREATE OR replace PROCEDURE Xxdpm_sales_order_validate_prc (
+p_transaction_id IN NUMBER)
+AS
+BEGIN
+    UPDATE dpm_oic_user.xxdpm_sales_orders_dvp_t
+    SET    status = 'Error',
+           errormessage = 'Invalid Item Number - Item does not exists in Delphi'
+    WHERE  uom IS NULL
+           AND source_transaction_id = p_transaction_id;
+
+    UPDATE dpm_oic_user.xxdpm_sales_orders_dvp_t
+    SET    status = 'Error',
+           errormessage =
+           'Unable to Derive Customer Details for given Reference Code'
+    WHERE  customername IS NULL
+           AND source_transaction_id = p_transaction_id;
+
+    UPDATE dpm_oic_user.xxdpm_sales_orders_dvp_t
+    SET    status = 'Error',
+           errormessage =
+           'Unable to Derive Operating Unit Details for given Reference Code'
+    WHERE  operatingunit IS NULL
+           AND source_transaction_id = p_transaction_id;
+
+    UPDATE dpm_oic_user.xxdpm_sales_orders_dvp_t
+    SET    status = 'Error',
+           errormessage =
+           'Unable to Derive Organization Details for given Reference Code'
+    WHERE  organizationcode IS NULL
+           AND source_transaction_id = p_transaction_id;
+END; 
+
+/
+
+CREATE SEQUENCE "DPM_OIC_USER"."XXDPM_ORDER_HEADER_SEQ" MINVALUE 0 MAXVALUE
+9999999999999999999999999999 INCREMENT BY 1 START WITH 300000004000140 CACHE 20
+ORDER NOCYCLE nokeep noscale GLOBAL; 
+
+/
+
+CREATE SEQUENCE "DPM_OIC_USER"."XXDPM_ORDER_LINES_SEQ" MINVALUE 0 MAXVALUE
+9999999999999999999999999999 INCREMENT BY 1 START WITH 300000004000260 CACHE 20
+ORDER NOCYCLE nokeep noscale GLOBAL; 
+
+/
